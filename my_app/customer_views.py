@@ -15,6 +15,16 @@ from django.db.models import Q
 
 
 # DEALING WITH CUSTOMERS 
+# @api_view(['POST'])
+# def add_customer(request):
+#     if request.method == 'POST':
+#         serializer = CustomerSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return create_standard_response(status=status.HTTP_201_CREATED, message="Customer created successfully", data=serializer.data)
+#         return create_standard_response(status=status.HTTP_400_BAD_REQUEST, message="Failed to create customer", data=serializer.errors)
+
+
 @api_view(['POST'])
 def add_customer(request):
     if request.method == 'POST':
@@ -22,7 +32,9 @@ def add_customer(request):
         if serializer.is_valid():
             serializer.save()
             return create_standard_response(status=status.HTTP_201_CREATED, message="Customer created successfully", data=serializer.data)
+        print(serializer.errors)  # Add this line
         return create_standard_response(status=status.HTTP_400_BAD_REQUEST, message="Failed to create customer", data=serializer.errors)
+
 
 
 @api_view(['GET', 'PUT'])

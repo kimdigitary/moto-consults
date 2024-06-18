@@ -11,8 +11,10 @@ class Customer(models.Model):
     phonenumber_2 = models.CharField(max_length=15, null=True, blank=True)
     email = models.EmailField(blank=True, null=True)
     address = models.CharField(max_length=64, null=False, blank=False)
-    passport_photo = models.ImageField(upload_to="passport_photos/", null=False, blank=False)
-    file_upload = models.FileField(upload_to="uploaded_files/", null=False, blank=False)
+    # passport_photo = models.ImageField(upload_to="passport_photos/", null=False, blank=False)
+    # file_upload = models.FileField(upload_to="uploaded_files/", null=False, blank=False)
+    passport_photo = models.ImageField(upload_to="passport_photos/", null=True, blank=True)
+    file_upload = models.FileField(upload_to="uploaded_files/", null=True, blank=True)
     remarks = models.TextField()
 
     def __str__(self):

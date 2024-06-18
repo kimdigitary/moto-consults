@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer</title>
+</head>
+
+<body>
+    <h1>Add New Customer</h1>
+    <form id="customerForm" method="post" enctype="multipart/form-data">
+        <!-- CSRF Token -->
+        <input type="hidden" name="csrfmiddlewaretoken" id="csrf_token" value="">
+
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br>
+
+        <label for="othernames">Other Names:</label>
+        <input type="text" id="othernames" name="othernames"><br>
+
+        <label for="phonenumber_1">Phone Number 1:</label>
+        <input type="text" id="phonenumber_1" name="phonenumber_1" required><br>
+
+        <label for="phonenumber_2">Phone Number 2:</label>
+        <input type="text" id="phonenumber_2" name="phonenumber_2"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="passport_photo">Passport Photo:</label>
+        <input type="file" id="passport_photo" name="passport_photo" accept="image/*"><br>
+
+        <label for="file_upload">File Upload:</label>
+        <input type="file" id="file_upload" name="file_upload"><br>
+
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea><br>
+
+        <button type="submit">Add Customer</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
